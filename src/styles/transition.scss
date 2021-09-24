@@ -1,0 +1,54 @@
+// vue global transition css define
+/* fade */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.25s;
+}
+
+.fade-enter-from,
+.fade-leave-active {
+  opacity: 0;
+}
+
+/* fade-transform AppMain*/
+.fade-transform-exit-active,
+.fade-transform-enter-active {
+  transition: all 0.25s;
+}
+.fade-transform-enter {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+.fade-transform-exit {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+/* breadcrumb transition */
+.breadcrumb-enter-active,
+.breadcrumb-leave-active {
+  transition: all 0.25s;
+}
+
+.breadcrumb-enter-from,
+.breadcrumb-leave-active {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.breadcrumb-leave-active {
+  position: absolute;
+}
+
+/*sidebar-fade*/
+.sidebar-fade-enter-active,.sidebar-fade-exit-active{
+  opacity: 1;
+  transition: opacity 2s;
+}
+.sidebar-fade-enter,.sidebar-fade-exit{
+  opacity: 0;
+}
+
+
+
+
