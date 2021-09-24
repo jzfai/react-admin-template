@@ -7,7 +7,7 @@ import { CSSTransition, SwitchTransition } from 'react-transition-group'
 import './Logo.scss'
 function Logo(props) {
     let title = 'react  admin  template'
-    let logo = '/logo.svg'
+    let logo = 'http://8.135.1.141/file/images/logo.svg'
     const store = useStore()
     //console.log('store', store.getState().app.sidebar.opened)
     React.useEffect(() => {
