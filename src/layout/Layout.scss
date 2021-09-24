@@ -1,0 +1,41 @@
+@import '@/styles/variables.scss';
+.layout-wrapper {
+  //display: flex;
+  //align-content: start;
+  //justify-content: start;
+}
+.main-container {
+  min-height: 100%;
+  transition: margin-left 0.35s;
+  margin-left: $sideBarWidth;
+  position: relative;
+}
+.sidebar-container {
+  transition: width 0.35s;
+  width: $sideBarWidth !important;
+  background-color: $menuBg;
+  height: 100%;
+  position: fixed;
+  font-size: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1001;
+  overflow: hidden;
+}
+.closeSidebar {
+  .sidebar-container {
+    width: 80px !important;
+  }
+  .main-container {
+    margin-left: 80px !important;
+  }
+}
+.hideSidebar {
+  .sidebar-container {
+    width: 0 !important;
+  }
+  .main-container {
+    margin-left: 0;
+  }
+}
