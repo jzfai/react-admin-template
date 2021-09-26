@@ -1,6 +1,6 @@
 #### 更新日志
 ```
-
+2021-09-26  fix menu some issue
 ```
 ### 前言
 #### 本架构使用的技术为：react17+hooks+vite2 的新一代的react框架，框架使用类似 vue-admin-template
@@ -17,10 +17,9 @@ ts版本分支：开发中
 ### 效果
 
 ### 线上体验地址：http://8.135.1.141/react-admin-template
-
-
-
-
+ ![http://8.135.1.141/file/images/wx-groud.png](http://8.135.1.141/file/images/1632649052939.png)
+### 看下首次加载资源大小和速度
+ ![http://8.135.1.141/file/images/wx-groud.png](http://8.135.1.141/file/images/1632649288128.png)
 ### 如何运行
 
 ```javascript
@@ -45,7 +44,6 @@ yarn run dev
    "preview:build": "yarn run build && vite preview " --- 构建并查看（建议更新上product前运行一次,查看是否有问题）
 },
 ```
-
 #####
 
 #### 如果需要实时交流的可以加入wx群(有vue3+ts视频教程)

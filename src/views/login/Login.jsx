@@ -26,7 +26,7 @@ function Login(props) {
     }
 
     if (props.token) {
-        return <Redirect to="/dashboard/mock-test" />
+        return <Redirect to="/dashboard" />
     }
     return (
         <div className="login-container columnCC">
