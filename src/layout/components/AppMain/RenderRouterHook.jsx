@@ -6,19 +6,15 @@ import { Redirect, Route, Switch, useLocation } from 'react-router-dom'
 /*antd*/
 import { Menu, Button } from 'antd'
 import { MenuUnfoldOutlined, MenuFoldOutlined, PieChartOutlined, MailOutlined } from '@ant-design/icons'
-const { SubMenu } = Menu
 /*其他引入*/
 import { isExternal } from '@/utils/validate'
 import path from 'path'
 import asyncImport from '../Navbar/asyncImportComp'
 import { CSSTransition, SwitchTransition, TransitionGroup } from 'react-transition-group'
 import { asyncRouters } from '@/router/config'
-import commonUtil from '@/utils/commonUtil'
 function RenderRouterHook(props) {
-    //let location = useLocation()
-    const [isMount, setIsMount] = useState(false)
     useEffect(() => {
-        setIsMount(true)
+        renderRouterFunc(asyncRouters, '/')
     }, [])
 
     const resolvePath = (uPath, routePath) => {
@@ -33,7 +29,6 @@ function RenderRouterHook(props) {
     let routerArr = []
     const renderRouterFunc = (asyncRouter, uPath) => {
         for (const item of asyncRouter) {
-            console.log('upItem', item)
             if (item.hasOwnProperty('children')) {
                 item.children.forEach((fItem) => {
                     routerArr.push(
@@ -58,26 +53,19 @@ function RenderRouterHook(props) {
                     />
                 )
             }
-            if (item.redirect) routerArr.push(<Redirect key={item.path} to={item.redirect} />)
+            if (item.redirect) routerArr.push(<Redirect exact={true} path={item.path} to={item.redirect} />)
         }
-        console.log('routerArr', routerArr)
     }
-    renderRouterFunc(asyncRouters, '/')
     return (
         <Fragment>
-            <Switch>{routerArr}</Switch>
-
-            {/*  <CSSTransition*/}
-            {/*    key={activeMenu}*/}
-            {/*    classNames="fade-main"*/}
-            {/*    timeout={200}*/}
-            {/*    onEnter={() => {*/}
-            {/*      console.log('onEnter')*/}
-            {/*    }}*/}
-            {/*  >*/}
-            {/*   */}
-            {/*  </CSSTransition>*/}
-            {/*</TransitionGroup>*/}
+            <TransitionGroup>
+                <CSSTransition classNames="fade-main" timeout={200}>
+                    <Switch>
+                        {routerArr}
+                        <Redirect exact={true} path="/" to="/dashboard" />
+                    </Switch>
+                </CSSTransition>
+            </TransitionGroup>
         </Fragment>
     )
 }
