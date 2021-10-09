@@ -2,11 +2,12 @@ import * as types from '../../action-types'
 import { getToken } from '@/utils/auth'
 const userInfo = {
   name: '',
-  role: 'admin',
+  role: '',
   avatar: '',
   token: getToken()
 }
 export default function user(state = userInfo, action) {
+  console.log('action', action)
   switch (action.type) {
     case types.USER_TOKEN:
       return {
@@ -16,7 +17,7 @@ export default function user(state = userInfo, action) {
     case types.USER_USER_INFO:
       return {
         ...state,
-        ...data
+        ...action.data
       }
     case types.USER_RESET:
       return {}

@@ -1,4 +1,5 @@
 /* react redux */
+// eslint-disable-next-line no-use-before-define
 import React from 'react'
 import { connect } from 'react-redux'
 import { Sidebar, Navbar, AppMain } from './components'

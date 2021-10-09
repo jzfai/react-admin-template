@@ -1,19 +1,15 @@
-/* react redux */
-import React, { Fragment } from 'react'
+// eslint-disable-next-line no-use-before-define
+import React from 'react'
 import { connect } from 'react-redux'
 import RenderRouterHook from './RenderRouterHook'
-function AppMain(props) {
-  React.useEffect(() => {
-    // console.log('AppMain mount')
-  }, [])
+import './AppMain.less'
+function AppMain() {
   return (
-    <Fragment>
+    <div className="appMain-container">
       <RenderRouterHook />
-    </Fragment>
+    </div>
   )
 }
 
 //配置使用redux
-export default connect((state) => ({
-  countNum: state.count.countNum
-}))(AppMain)
+export default connect(() => ({}))(AppMain)

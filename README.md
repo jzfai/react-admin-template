@@ -1,9 +1,9 @@
 #### 更新日志
 ```
-2021-09-26  fix menu some issue
+2021-10-09 Optimization side menu 
 ```
 ### 前言
-#### 本架构使用的技术为：react17+hooks+vite2 的新一代的react框架，框架使用类似 vue-admin-template
+#### 本架构使用的技术为：react17+hooks+vite2 的新一代的react框架，框架使用类似 vue3-admin-template
 
 ```
 框架有js和ts版本
