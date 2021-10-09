@@ -1,10 +1,11 @@
 import reactRefresh from '@vitejs/plugin-react-refresh'
 import path, { resolve } from 'path'
 import viteSvgIcons from 'vite-plugin-svg-icons'
+import legacy from '@vitejs/plugin-legacy'
 //mock
 import { viteMockServe } from 'vite-plugin-mock'
 import settings from './src/settings'
-const prodMock = settings.openProdMock
+const prodMock = true
 export default ({ command }) => {
   return {
     base: './',
@@ -30,6 +31,10 @@ export default ({ command }) => {
     },
     plugins: [
       reactRefresh(),
+      legacy({
+        targets: ['ie >= 11'],
+        additionalLegacyPolyfills: ['regenerator-runtime/runtime']
+      }),
       viteSvgIcons({
         // 指定需要缓存的图标文件夹（可以配置多个）
         iconDirs: [path.resolve(process.cwd(), 'src/icons/common'), path.resolve(process.cwd(), 'src/icons/nav-bar')],
@@ -51,6 +56,7 @@ export default ({ command }) => {
     ],
 
     build: {
+      minify: 'terser',
       brotliSize: false,
       // 消除打包大小超过500kb警告
       chunkSizeWarningLimit: 2000,
