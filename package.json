@@ -1,5 +1,5 @@
 {
-    "name": "vite-react",
+    "name": "react-admin-template",
     "version": "1.0.3",
     "scripts": {
         "dev": "vite --mode serve-dev --host",
