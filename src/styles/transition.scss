@@ -41,14 +41,12 @@
 }
 
 /*sidebar-fade*/
-.sidebar-fade-enter-active,.sidebar-fade-exit-active{
+.sidebar-fade-enter-active,
+.sidebar-fade-exit-active {
   opacity: 1;
   transition: opacity 2s;
 }
-.sidebar-fade-enter,.sidebar-fade-exit{
+.sidebar-fade-enter,
+.sidebar-fade-exit {
   opacity: 0;
 }
-
-
-
-

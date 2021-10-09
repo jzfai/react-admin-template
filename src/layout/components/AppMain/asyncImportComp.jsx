@@ -1,4 +1,4 @@
-// asyncImportComp.js
+// eslint-disable-next-line no-use-before-define
 import React, { useState, useEffect } from 'react'
 
 const asyncImportComponent = function (importComp) {
@@ -15,7 +15,7 @@ const asyncImportComponent = function (importComp) {
       }
       fetchComponent()
     }, [])
-    return Comp ? <Comp {...props} /> : <div>加载中...</div>
+    return Comp ? <Comp {...props} /> : <div className="pl"> </div>
   }
   return AsyncComponent
 }
