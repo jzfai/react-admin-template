@@ -5,7 +5,7 @@ import legacy from '@vitejs/plugin-legacy'
 //mock
 import { viteMockServe } from 'vite-plugin-mock'
 import settings from './src/settings'
-const prodMock = true
+const prodMock = settings.openProdMock
 export default ({ command }) => {
   return {
     base: './',
@@ -43,7 +43,7 @@ export default ({ command }) => {
       }),
       //https://blog.csdn.net/weixin_42067720/article/details/115579817
       viteMockServe({
-        supportTs: true,
+        supportTs: false,
         mockPath: 'mock',
         localEnabled: command === 'serve',
         prodEnabled: prodMock,
