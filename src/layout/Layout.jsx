@@ -1,13 +1,9 @@
-/* react redux */
 // eslint-disable-next-line no-use-before-define
 import React from 'react'
 import { connect } from 'react-redux'
 import { Sidebar, Navbar, AppMain } from './components'
 import './Layout.scss'
 function Layout(props) {
-  React.useEffect(() => {
-    // console.log('Layout mount')
-  }, [])
   return (
     <div className={`${!props.opened && 'closeSidebar'}`}>
       {/* left container*/}

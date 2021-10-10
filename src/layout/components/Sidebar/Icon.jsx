@@ -4,13 +4,13 @@ import SvgIcon from '@/icons/svg-icon'
 import './Icon.less'
 function Icon(props) {
   return (
-    <Fragment>
+    <div>
       {props.icon && (
         <div className="nav-icon">
           <SvgIcon iconClass={props.icon} />
         </div>
       )}
-    </Fragment>
+    </div>
   )
 }
 

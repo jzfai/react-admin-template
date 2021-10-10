@@ -1,4 +1,3 @@
-/*react redux router*/
 // eslint-disable-next-line no-use-before-define
 import React from 'react'
 import { connect } from 'react-redux'
@@ -43,15 +42,6 @@ function menuItem(props) {
       return true
     }
     return false
-  }
-  const renderIcon = (icon) => {
-    if (icon) {
-      return (
-        <div className="nav-icon">
-          <SvgIcon iconClass={icon} />
-        </div>
-      )
-    }
   }
 
   const renderSideMenu = (item, basePath) => {
