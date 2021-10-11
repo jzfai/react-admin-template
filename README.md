@@ -28,24 +28,6 @@ ts版本分支：开发中
 git clone https://github.com/jzfai/react-admin-template.git
 
 
-#!/bin/sh
- 
-git filter-branch --env-filter '
-OLD_EMAIL="kuanghua@ruixiude.com"
-CORRECT_NAME="kuanghua"
-CORRECT_EMAIL="869653722@qq.com"
-if [ "$GIT_COMMITTER_EMAIL" = "$OLD_EMAIL" ]
-then
-    export GIT_COMMITTER_NAME="$CORRECT_NAME"
-    export GIT_COMMITTER_EMAIL="$CORRECT_EMAIL"
-fi
-if [ "$GIT_AUTHOR_EMAIL" = "$OLD_EMAIL" ]
-then
-    export GIT_AUTHOR_NAME="$CORRECT_NAME"
-    export GIT_AUTHOR_EMAIL="$CORRECT_EMAIL"
-fi
-' --tag-name-filter cat -- --branches --tags
-
 进入项目目录
 cd  react-admin-template
 
@@ -68,6 +50,6 @@ yarn run dev
 #### 如果需要实时交流的可以加入wx群(有vue3+ts视频教程)
 
 
- ![http://8.135.1.141/file/images/wx-groud.png](http://8.135.1.141/file/images/wx-groud1.png)
+ ![http://8.135.1.141/file/images/wx-groud.png](http://8.135.1.141/file/images/wx-groud.png)
 
 大家的支持是我前进的动力    欢迎加入一起开发

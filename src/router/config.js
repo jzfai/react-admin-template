@@ -34,6 +34,17 @@ export const asyncRouters = [
     ]
   },
   {
+    path: '/error-log',
+    children: [
+      {
+        path: 'log',
+        component: () => import('@/views/error-log/index'),
+        name: 'ErrorLog',
+        meta: { title: 'Error Log', icon: 'bug' }
+      }
+    ]
+  },
+  {
     path: '/nested',
     redirect: '/nested/menu1-1',
     alwaysShow: true,

@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { Form, Input, Button, message } from 'antd'
 import { A_login, A_getUserInfo } from '@/store/actions'
-import './login.scss'
+import './login.less'
 function Login(props) {
   const [loading, setLoading] = useState(false)
   const [tipMsg, setTipMsg] = useState('')

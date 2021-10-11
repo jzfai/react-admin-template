@@ -1,0 +1,51 @@
+//.login-container avoid global pollution
+.login-container {
+  @bg: #2d3a4b;
+  @dark_gray: #889aa4;
+  @light_gray: #eee;
+
+  height: 100vh;
+  width: 100%;
+  background-color: #2d3a4b;
+  .login-form {
+    margin-bottom: 20vh;
+    width: 360px;
+  }
+  .title-container {
+    .title {
+      font-size: 26px;
+      color: #eee;
+      margin: 0 auto 25px auto;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+
+
+  .svg-container {
+    padding-left: 6px;
+    color: @dark_gray;
+    text-align: center;
+    width: 30px;
+  }
+  //错误提示信息
+  .tip-message {
+    color: #e4393c;
+    height: 30px;
+    margin-top: -12px;
+    font-size: 12px;
+  }
+  //登录按钮
+  .login-btn {
+    width: 100%;
+    margin-bottom: 15vh;
+  }
+  .show-pwd {
+    width: 50px;
+    font-size: 16px;
+    color: @dark_gray;
+    cursor: pointer;
+    text-align: center;
+  }
+}
+
