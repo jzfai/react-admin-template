@@ -38,10 +38,11 @@ github 地址：  https://github.com/jzfai/react-admin-template.git
 ## Related items
 
 The framework is available in js, ts and plus versions
-- js version：[vue3-element-admin](https://github.com/jzfai/vue3-admin-template.git)
-- ts version：[vue3-element-ts](https://github.com/jzfai/vue3-admin-ts.git)
-- js version for plus：[vue3-element-plus](https://github.com/jzfai/vue3-admin-plus.git)
-- react version： [react-admin-template](https://github.com/jzfai/react-admin-template.git)
+- react js version： [react-admin-template](https://github.com/jzfai/react-admin-template.git)
+- react ts version： [react-admin-template](https://github.com/jzfai/react-admin-ts.git)
+- vue3 js version：[vue3-element-admin](https://github.com/jzfai/vue3-admin-template.git)
+- vue3 ts version：[vue3-element-ts](https://github.com/jzfai/vue3-admin-ts.git)
+- vue3 plus version：[vue3-element-plus](https://github.com/jzfai/vue3-admin-plus.git)
 - java Micro-service background data：[micro-service-plus](https://github.com/jzfai/micro-service-plus)
 > development and  experience：two words  Really fragrant！！！！！
 

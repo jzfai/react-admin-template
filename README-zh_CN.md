@@ -42,12 +42,14 @@ github 地址：  https://github.com/jzfai/react-admin-template.git
 
 框架有js，ts和plus版本
 
-- js版本：[vue3-element-admin](https://github.com/jzfai/vue3-admin-template.git)
-- ts版本：[vue3-element-ts](https://github.com/jzfai/vue3-admin-ts.git)
-- js实例参考plus版本：[vue3-element-plus](https://github.com/jzfai/vue3-admin-plus.git)
-- react版本： [react-admin-template](https://github.com/jzfai/react-admin-template.git)
-- java微服务后台数据：[micro-service-plus](https://github.com/jzfai/micro-service-plus)
+框架有js，ts和plus版本
 
+- react js版本： [react-admin-template](https://github.com/jzfai/react-admin-template.git)
+- react ts版本： [react-admin-template](https://github.com/jzfai/react-admin-ts.git)
+- vue3 js版本：[vue3-element-admin](https://github.com/jzfai/vue3-admin-template.git)
+- vue3 ts版本：[vue3-element-ts](https://github.com/jzfai/vue3-admin-ts.git)
+- vue3 plus版本：[vue3-element-plus](https://github.com/jzfai/vue3-admin-plus.git)
+- java微服务后台数据：[micro-service-plus](https://github.com/jzfai/micro-service-plus)
 > 开发和使用感受：两个字 真香！！！！！
 
 
