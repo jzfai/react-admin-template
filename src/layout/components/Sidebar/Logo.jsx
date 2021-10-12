@@ -1,23 +1,13 @@
 /* react redux */
 // eslint-disable-next-line no-use-before-define
-import React, { Fragment, useState } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
-import { useSelector, useDispatch, useStore } from 'react-redux'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
 /*引入本页样式*/
 import './Logo.scss'
 function Logo(props) {
   let title = 'react  admin  template'
   let logo = 'http://8.135.1.141/file/images/logo.svg'
-  const store = useStore()
-  //console.log('store', store.getState().app.sidebar.opened)
-  React.useEffect(() => {
-    return (state) => {
-      //类似于ComponentUnMount
-      // console.log('useEffectreturn')
-    }
-  }, [])
-
   const renderImageTitle = () => {
     if (props.opened) {
       return (

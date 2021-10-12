@@ -8,7 +8,6 @@ const { SubMenu } = Menu
 import Icon from './Icon'
 import path from 'path'
 import { isExternal } from '@/utils/validate'
-import SvgIcon from '@/icons/svg-icon'
 function menuItem(props) {
   /*侧边栏默认选中和展开*/
   let location = useLocation()

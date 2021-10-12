@@ -1,0 +1,7 @@
+
+.reset-table-height{
+  .ant-table-body{
+    max-height: calc(100vh - 210px)!important;
+  }
+}
+

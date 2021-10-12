@@ -8,3 +8,12 @@
 .hamburger.is-active {
   transform: rotate(180deg);
 }
+
+.svgIcon-container{
+  .nav-icon {
+    display: inline-block;
+    font-size: 15px;
+    margin-right: 10px;
+    position: relative;
+  }
+}

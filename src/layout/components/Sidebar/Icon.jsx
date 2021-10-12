@@ -1,16 +1,16 @@
 // eslint-disable-next-line no-use-before-define
 import React, { Fragment } from 'react'
 import SvgIcon from '@/icons/svg-icon'
-import './Icon.less'
+import './Icon.scss'
 function Icon(props) {
   return (
-    <div>
+    <Fragment>
       {props.icon && (
         <div className="nav-icon">
           <SvgIcon iconClass={props.icon} />
         </div>
       )}
-    </div>
+    </Fragment>
   )
 }
 

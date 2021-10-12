@@ -1,6 +1,5 @@
 // eslint-disable-next-line no-use-before-define
 import React, { useState, useEffect } from 'react'
-
 const asyncImportComponent = function (importComp) {
   function AsyncComponent(props) {
     const [Comp, setComp] = useState(null)

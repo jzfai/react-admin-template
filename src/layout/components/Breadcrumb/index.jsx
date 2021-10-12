@@ -1,16 +1,12 @@
 /* react redux */
 // eslint-disable-next-line no-use-before-define
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { useSelector, useDispatch } from 'react-redux'
 import { Breadcrumb } from 'antd'
-import { useLocation, useParams, useRouteMatch } from 'react-router-dom'
-function index(props) {
+import { useLocation } from 'react-router-dom'
+function index() {
   //获取path
   let location = useLocation()
-  let params = useParams()
-  let routerMatch = useRouteMatch()
-  const [activeMenu, setActiveMenu] = useState('')
   let pathNameArr = location.pathname.substring(1).split('/')
   useEffect(() => {}, [location])
 

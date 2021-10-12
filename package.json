@@ -1,6 +1,6 @@
 {
   "name": "react-admin-template",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "scripts": {
     "dev": "vite --mode serve-dev --host",
     "build": "vite build --mode build",
@@ -27,7 +27,7 @@
     "react-router-dom": "^5.2.0",
     "react-transition-group": "^4.4.2",
     "redux": "^4.0.5",
-    "redux-devtools-extension": "^2.13.8",
+    "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.3.0",
     "tinymce": "^4.9.11"
   },

@@ -30,7 +30,8 @@ if (checkNeed()) {
     const substring = 'script error'
     if (string.indexOf(substring) > -1) {
       errLogReq('Script Error: See Browser Console for Detail')
-    } else {
+    } else if (msg.indexOf('error') !== -1) {
+      //只对error日志进行收集
       const message = [
         'Message: ' + msg,
         'URL: ' + url,

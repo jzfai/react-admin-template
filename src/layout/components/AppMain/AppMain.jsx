@@ -2,7 +2,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import RenderRouterHook from './RenderRouterHook'
-import './AppMain.less'
+import './AppMain.scss'
 function AppMain() {
   return (
     <div className="appMain-container">

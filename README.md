@@ -1,55 +1,127 @@
-#### 更新日志
-```
-2021-10-09 Optimization side menu 
-```
-### 前言
-#### 本架构使用的技术为：react17+hooks+vite2 的新一代的react框架，框架使用类似 vue3-admin-template
+# react-admin-template
 
-```
-框架有js和ts版本
-js版本分支：https://github.com/jzfai/react-admin-template.git
-ts版本分支：开发中
-新一代的微服务架构：https://github.com/jzfai/micro-service-plus
-```
+**English** | [中文](./README-zh_CN.md)
 
-> 开发和使用感受：两个字 真香！！！！！
+> A basic react admin template with  vite2 & ant4 UI & axios & svg-icon& permission control & lint
 
-### 效果
+A new  generation admin  construct   using  react17+vite2+element-plus ，It's fast!
 
-### 线上体验地址：http://8.135.1.141/react-admin-template
- ![http://8.135.1.141/file/images/wx-groud.png](http://8.135.1.141/file/images/1632649052939.png)
-### 看下首次加载资源大小和速度
- ![http://8.135.1.141/file/images/wx-groud.png](http://8.135.1.141/file/images/1632649288128.png)
-### 如何运行
+Use eslint+prettier+gitHooks format and verification code to improve code standardization and development efficiency
+
+
+## Update log
 
 ```javascript
+//10-08
+add error log collection func
+```
 
-克隆项目
+## Online experience
+
+[github address](https://github.com/jzfai/react-admin-template.git)
+
+[Access address](http://8.135.1.141/react-admin-template)
+
+国内体验地址：http://8.135.1.141/react-admin-template
+
+github 地址：  https://github.com/jzfai/react-admin-template.git
+
+## Demo
+
+ ---- Let's look at the loading speed and the size of the built package first.：
+
+![template-speed-analysis](http://8.135.1.141/file/images/react-template-speed-analysis.png)
+
+![template-demo](http://8.135.1.141/file/images/react-template-demo.png)
+
+
+## Related items
+
+The framework is available in js, ts and plus versions
+- js version：[vue3-element-admin](https://github.com/jzfai/vue3-admin-template.git)
+- ts version：[vue3-element-ts](https://github.com/jzfai/vue3-admin-ts.git)
+- js version for plus：[vue3-element-plus](https://github.com/jzfai/vue3-admin-plus.git)
+- react version： [react-admin-template](https://github.com/jzfai/react-admin-template.git)
+- java Micro-service background data：[micro-service-plus](https://github.com/jzfai/micro-service-plus)
+> development and  experience：two words  Really fragrant！！！！！
+
+## Documents
+
+-- Efforts are being made to develop documents ......
+
+You can refer to first：[documentation of vue-admin-template ](https://juejin.im/post/59097cd7a22b9d0065fb61d2)
+
+#### Difference from traditional react admin
+
+1.Simple routing configuration, routing generation and page rendering can be completed in one configuration
+
+2.Using react hooks, the writing method is more flexible, simple, and easier to maintain and migrate
+
+3.Using vite2 instead of webpack is easier to configure, pack and run faster
+
+
+[Comparison of packaging speed between vite2 and webpack](https://github.com/jzfai/vue3-admin-template/issues/2)
+
+## Build Setup
+
+```bash
+# clone the project
 git clone https://github.com/jzfai/react-admin-template.git
 
+# enter the project directory
+cd react-admin-template
 
-进入项目目录
-cd  react-admin-template
-
-运行yarn安装依赖
+# install dependency(Recommend use yarn)
 yarn
 
-运行dev命令
+# develop
 yarn run dev
-
-补充：这里说下package.json里的scripts命令
-"scripts": {
-  "dev": "vite --mode serve-dev", ---- 开发时运行
-   "build": "vite build --mode build",  ---- 打包发布生产环境
-   "serve": "vite preview --mode build" ---- 这个是在你本地打包完后（yarn run build）后会生产一个dist文件夹，这个命令在你本地启动一个本地服务用于查看dist文件内容，发布生产前可以用这个先看下打包的效果
-   "preview:build": "yarn run build && vite preview " --- 构建并查看（建议更新上product前运行一次,查看是否有问题）
-},
 ```
-#####
 
-#### 如果需要实时交流的可以加入wx群(有vue3+ts视频教程)
+using the browser to open http://localhost:5001
 
+## Build
 
- ![http://8.135.1.141/file/images/wx-groud.png](http://8.135.1.141/file/images/wx-groud.png)
+```bash
+# build for dev environment
+yarn run build-serve
 
-大家的支持是我前进的动力    欢迎加入一起开发
+# build for production environment
+yarn run  build
+```
+
+## Others
+
+```bash
+# preview the dev environment effect
+yarn run preview:build-serve
+
+# preview the release environment effect
+yarn run preview
+
+# code format check
+yarn run lint
+
+```
+
+## Extra
+
+Architecture development is not easy. If you feel good, please give me a compliment. The architecture is still being improved. Welcome to join me in development and become Contributors together! ! ! !
+
+## Browsers support
+
+Modern browsers and Internet Explorer 11+.
+
+| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari |
+| --------- | --------- | --------- | --------- |
+|Edge| last 2 versions| last 2 versions| last 2 versions
+
+## Discussion and Communication
+[WeChat group](http://8.135.1.141/file/images/wx-groud.png)
+
+## License
+
+[MIT](https://github.com/jzfai/react-admin-template/blob/master/LICENSE) license.
+
+Copyright (c) 2021-present  kuanghua
+
