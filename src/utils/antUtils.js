@@ -1,16 +1,15 @@
-import Modal from 'antd/es/modal/Modal'
+import { Modal } from 'antd'
 export default {
   antConfirm(content) {
-    //prod has error
     return new Promise((resolve) => {
       Modal.confirm({
         title: '删除',
         content: content,
         okText: '是',
-        okType: 'warning',
+        okType: 'danger',
         cancelText: '否',
         onOk: () => {
-          resolve()
+          resolve('')
         },
         onCancel() {
           console.log('Cancel')

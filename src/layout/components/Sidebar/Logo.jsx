@@ -5,9 +5,10 @@ import { connect } from 'react-redux'
 import { CSSTransition, SwitchTransition } from 'react-transition-group'
 /*引入本页样式*/
 import './Logo.scss'
+import settings from '@/settings'
 function Logo(props) {
-  let title = 'react  admin  template'
-  let logo = 'http://8.135.1.141/file/images/logo.svg'
+  let title = settings.title
+  let logo = settings.logo
   const renderImageTitle = () => {
     if (props.opened) {
       return (

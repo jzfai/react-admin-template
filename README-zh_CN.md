@@ -45,7 +45,7 @@ github 地址：  https://github.com/jzfai/react-admin-template.git
 框架有js，ts和plus版本
 
 - react js版本： [react-admin-template](https://github.com/jzfai/react-admin-template.git)
-- react ts版本： [react-admin-template](https://github.com/jzfai/react-admin-ts.git)
+- react ts版本： [react-admin-ts](https://github.com/jzfai/react-admin-ts.git)
 - vue3 js版本：[vue3-element-admin](https://github.com/jzfai/vue3-admin-template.git)
 - vue3 ts版本：[vue3-element-ts](https://github.com/jzfai/vue3-admin-ts.git)
 - vue3 plus版本：[vue3-element-plus](https://github.com/jzfai/vue3-admin-plus.git)

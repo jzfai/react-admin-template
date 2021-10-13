@@ -1,11 +1,11 @@
 /* react redux */
 // eslint-disable-next-line no-use-before-define
-import React from 'react'
+import React, { useEffect } from 'react'
 import bus from '@/utils/eventBus'
 import axiosReq from '@/utils/axiosReq.js'
 import { connect } from 'react-redux'
 import { Button, Form, Input, message, Space, Table, DatePicker } from 'antd'
-// import antUtils from '@/utils/antUtils'
+import antUtils from '@/utils/antUtils'
 const { RangePicker } = DatePicker
 
 function ErrorLog() {
@@ -24,12 +24,11 @@ function ErrorLog() {
     })
   }
   const tableDelClick = (row) => {
-    // antUtils.antConfirm(`您确定要删除${row.pageUrl}】？`).then(() => {
-    //
-    // })
-    deleteByIdReq(row.id).then(() => {
-      selectPageReq()
-      message.success(`【${row.pageUrl}】删除成功`).then()
+    antUtils.antConfirm(`您确定要删除${row.pageUrl}】？`).then(() => {
+      deleteByIdReq(row.id).then(() => {
+        selectPageReq()
+        message.success(`【${row.pageUrl}】删除成功`).then()
+      })
     })
   }
   const columns = [
@@ -79,34 +78,48 @@ function ErrorLog() {
     onChange: onSelectChange
   }
   const handleCurrentChange = (pageNum, pageSize) => {
-    console.log('pageNum, pageSize', pageNum, pageSize)
+    //console.log('pageNum, pageSize', pageNum, pageSize)
     setPageNum(pageNum)
     setPageSize(pageSize)
-    selectPageReq()
+    //通过useEffect 更新数据
+    // Promise.resolve()
+    //   .then(() => {
+    //   })
+    //   .then(() => {
+    //     //获取到设置后的值
+    //     selectPageReq()
+    //   })
   }
 
   const multiDelBtnClick = () => {
     if (rowIdArr.length === 0) {
-      message.warning('表格选项不能为空', 'warning').then()
+      message.warning('表格选项不能为空').then()
       return
     }
-    // antUtils.antConfirm(`确认删除【${rowIdArr.join(',')}】吗?`).then(() => {
-    //
-    // })
-    axiosReq({
-      url: `/ty-user/errorCollection/deleteBatchIds`,
-      data: rowIdArr,
-      method: 'DELETE',
-      bfLoading: true
-    }).then(() => {
-      selectPageReq()
-      message.success('删除成功').then()
+    antUtils.antConfirm(`确认删除【${rowIdArr.join(',')}】吗?`).then(() => {
+      axiosReq({
+        url: `/ty-user/errorCollection/deleteBatchIds`,
+        data: rowIdArr,
+        method: 'DELETE',
+        bfLoading: true
+      }).then(() => {
+        selectPageReq()
+        message.success('删除成功').then()
+      })
     })
   }
   /*分页相关*/
   const [pageSize, setPageSize] = React.useState(10)
   const [pageNum, setPageNum] = React.useState(1)
   const [pageTotal, setPageTotal] = React.useState([])
+  //副作用更新数据
+  useEffect(() => {
+    selectPageReq()
+  }, [pageSize, pageNum])
+
+  // useEffect(() => {
+  //   selectPageReq()
+  // }, [pageNum])
   let selectPageReq = (values) => {
     const data = Object.assign(values ?? {}, {
       pageNum: pageNum,

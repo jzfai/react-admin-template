@@ -1,5 +1,6 @@
 const setting = {
   title: 'React Admin Template',
+  logo: 'http://8.135.1.141/file/images/logo.svg',
   /**
    * @type {boolean} true | false
    * @description Whether fix the header
@@ -60,7 +61,7 @@ const setting = {
    * The default is only used in the production env
    * If you want to also use it in dev, you can pass ['build', 'serve']
    */
-  errorLog: ['serve', 'build']
+  errorLog: ['build']
 }
 
 export default setting
