@@ -6,6 +6,10 @@ function index(props) {
   return (
     <div className="dashboard-container">
       <div className="dashboard-text">name: {props.username}</div>
+
+      <div className="mt-2">this is var from vite.config.js define</div>
+      <div>{JSON.stringify(GLOBAL_VAR)}</div>
+      <div>{GLOBAL_STRING}</div>
     </div>
   )
 }

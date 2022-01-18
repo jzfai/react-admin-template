@@ -16,8 +16,8 @@ function Login(props) {
       .then(() => {
         message.success('登录成功')
       })
-      .catch((msg) => {
-        setTipMsg(msg)
+      .catch((res) => {
+        setTipMsg(res.msg)
         setLoading(false)
       })
   }

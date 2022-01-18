@@ -1,23 +1,18 @@
 # react-admin-template
 
-**中文** | [English](./README.md)
-
-
 
 > 这是一个基础的 react admin 管理后台。
 
 
-本架构使用的技术为：react17+vite2+ant4 新一代的前端框架，It's fast!
+本架构使用的技术为：react17+vite2+ant4 新一代的前端框架，It's easy and fast!
 
 使用 eslint+prettier+gitHooks 格式和校验代码,提高代码规范性和开发效率
 
 ## 更新日志
 
-```javascript
-//10-08
-add error log collection func
-```
+--- to look the doc-
 
+[真香定律！带你用react17+vite2撸后台](https://juejin.cn/post/7054467502717272094)
 
 ## 线上体验
 
@@ -40,26 +35,22 @@ github 地址：  https://github.com/jzfai/react-admin-template.git
 
 ## 相关项目
 
-框架有js，ts和plus版本
-
-框架有js，ts和plus版本
+框架有js，ts版本
 
 - react js版本： [react-admin-template](https://github.com/jzfai/react-admin-template.git)
 - react ts版本： [react-admin-ts](https://github.com/jzfai/react-admin-ts.git)
-- vue3 js版本：[vue3-element-admin](https://github.com/jzfai/vue3-admin-template.git)
-- vue3 ts版本：[vue3-element-ts](https://github.com/jzfai/vue3-admin-ts.git)
+
 - vue3 plus版本：[vue3-element-plus](https://github.com/jzfai/vue3-admin-plus.git)
 - java微服务后台数据：[micro-service-plus](https://github.com/jzfai/micro-service-plus)
 > 开发和使用感受：两个字 真香！！！！！
 
 
 ## 文档
--- 文档努力开发中。。。。
 
-可以先参考(和vue-admin-template使用类似)：[vue-admin-template使用文档](https://juejin.im/post/59097cd7a22b9d0065fb61d2)
+- [真香定律！带你用react17+vite2撸后台](https://juejin.cn/post/7054467502717272094)
 
 
-#### 和 传统react admin区别
+#### 和传统react admin区别
 
 1.路由配置简单，一次配置即可完成路由生成和页面渲染
 
@@ -68,7 +59,6 @@ github 地址：  https://github.com/jzfai/react-admin-template.git
 3.使用vite2代替webpack 配置更加简单，打包和运行速度更快
 
 
-[vite2和webpack打包速度上的对比](https://github.com/jzfai/react-admin-template/issues/2)
 
 ## 构建步骤
 
@@ -79,11 +69,11 @@ git clone https://github.com/jzfai/react-admin-template.git
 # 进入项目目录
 cd  react-admin-template
 
-# 安装依赖(建议用yarn)
-yarn
+# 安装依赖(建议用pnpm)
+pnpm 
 
 # 启动服务
-yarn run dev
+pnpm  run dev
 ```
 
 浏览器访问 http://localhost:5005
@@ -93,95 +83,25 @@ yarn run dev
 
 ```bash
 # 构建测试环境
-yarn run build-serve
+pnpm  run build-serve
 
 # 构建生产环境
-yarn run build
+pnpm  run build
 ```
 
 ## 其它
 
 ```bash
 # 预览发布环境效果
-yarn run preview:build-serve
+pnpm  run preview:build-serve
 
 # 预览生产环境
-yarn run preview
+pnpm  run preview
 
 # 代码格式检查并自动修复
-yarn run lint
+pnpm  run lint
 ```
 
-## 功能
-
-```
-- 登录 / 注销
-
-- 权限验证
-  - 页面权限
-  - 指令权限
-  - 权限配置
-  - 二步登录
-
-- 多环境发布
-  - serve
-  - build
-  - priview
-  - lint
-
-- 全局功能
-  #- 国际化多语言
-  #- 多种动态换肤
-  - 动态侧边栏（支持多级路由嵌套）
-  - 动态面包屑
-  - 快捷导航(标签页)
-  - Svg Sprite 图标
-  - 本地/后端 mock 数据
-  #- Screenfull全屏
-  - 自适应收缩侧边栏
-
-- 编辑器
-  #- 富文本
-  #- Markdown
-  #- JSON 等多格式
-
-#- Excel
-  #- 导出excel
-  #- 导入excel
-  #- 前端可视化excel
-  #- 导出zip
-
-- 表格
-  #- 动态表格
-  #- 拖拽表格
-  #- 内联编辑
-
-- 错误页面
-  #- 401
-  #- 404
-
-- 組件
-  - 头像上传
-  - 返回顶部
-  #- 拖拽Dialog
-  #- 拖拽Select
-  #- 拖拽看板
-  #- 列表拖拽
-  #- SplitPane
-  #- Dropzone
-  #- Sticky
-  #- CountTo
-
-- 综合实例
-- 错误日志
-- Dashboard
-#- 引导页
-- ECharts 图表
-#- Clipboard(剪贴复制)
-#- Markdown2html
-```
-
->注：#---暂未实现(希望大家能一起开发)
 
 ## 额外
 

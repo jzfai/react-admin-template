@@ -11,10 +11,9 @@ Use eslint+prettier+gitHooks format and verification code to improve code standa
 
 ## Update log
 
-```javascript
-//10-08
-add error log collection func
-```
+--- to look the doc-
+
+[真香定律！带你用react17+vite2撸后台](https://juejin.cn/post/7054467502717272094)
 
 ## Online experience
 
@@ -37,20 +36,20 @@ github 地址：  https://github.com/jzfai/react-admin-template.git
 
 ## Related items
 
-The framework is available in js, ts and plus versions
+The framework is available in js, ts versions
+
 - react js version： [react-admin-template](https://github.com/jzfai/react-admin-template.git)
 - react ts version： [react-admin-ts](https://github.com/jzfai/react-admin-ts.git)
-- vue3 js version：[vue3-element-admin](https://github.com/jzfai/vue3-admin-template.git)
-- vue3 ts version：[vue3-element-ts](https://github.com/jzfai/vue3-admin-ts.git)
+
 - vue3 plus version：[vue3-element-plus](https://github.com/jzfai/vue3-admin-plus.git)
 - java Micro-service background data：[micro-service-plus](https://github.com/jzfai/micro-service-plus)
 > development and  experience：two words  Really fragrant！！！！！
 
 ## Documents
 
--- Efforts are being made to develop documents ......
+系列文章入口：
 
-You can refer to first：[documentation of vue-admin-template ](https://juejin.im/post/59097cd7a22b9d0065fb61d2)
+- [真香定律！带你用react17+vite2撸后台](https://juejin.cn/post/7054467502717272094)
 
 #### Difference from traditional react admin
 
@@ -72,11 +71,11 @@ git clone https://github.com/jzfai/react-admin-template.git
 # enter the project directory
 cd react-admin-template
 
-# install dependency(Recommend use yarn)
-yarn
+# install dependency(Recommend use pnpm)
+pnpm
 
 # develop
-yarn run dev
+pnpm run dev
 ```
 
 using the browser to open http://localhost:5001
@@ -85,23 +84,23 @@ using the browser to open http://localhost:5001
 
 ```bash
 # build for dev environment
-yarn run build-serve
+pnpm run build-serve
 
 # build for production environment
-yarn run  build
+pnpm run  build
 ```
 
 ## Others
 
 ```bash
 # preview the dev environment effect
-yarn run preview:build-serve
+pnpm run preview:build-serve
 
 # preview the release environment effect
-yarn run preview
+pnpm run preview
 
 # code format check
-yarn run lint
+pnpm run lint
 
 ```
 

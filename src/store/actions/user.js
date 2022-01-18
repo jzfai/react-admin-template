@@ -69,7 +69,6 @@ export const A_getUserInfo = (token) => (dispatch) => {
           username: username
         }
         dispatch(A_USER_USER_INFO(userInfo))
-        console.log('我返回了')
         resolve(data)
       })
       .catch((error) => {

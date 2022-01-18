@@ -1,28 +1,24 @@
 import axios from 'axios'
-//import { ElLoading, ElMessage, ElMessageBox } from 'element-plus'
 import { getToken, setToken, removeToken } from '@/utils/auth'
-let requestData
+import { Modal, message } from 'antd'
+let reqConfig
 let loadingE
 
-const service = axios.create({
-  // baseURL: process.env.VUE_APP_BASE_URL,
-  // timeout: 30000 // 超时时间
-})
+const service = axios.create({})
 // 请求拦截
 service.interceptors.request.use(
-  (request) => {
-    // console.log('request', request)
+  (req) => {
+    // console.log('req', req)
     // token配置
-    request.headers['AUTHORIZE_TOKEN'] = getToken()
+    req.headers['AUTHORIZE_TOKEN'] = getToken()
     /* 下载文件*/
-    if (request.isDownLoadFile) {
-      request.responseType = 'blob'
+    if (req.isDownLoadFile) {
+      req.responseType = 'blob'
     }
-    if (request.isUploadFile) {
-      request.headers['Content-Type'] = 'multipart/form-data'
+    if (req.isUploadFile) {
+      req.headers['Content-Type'] = 'multipart/form-data'
     }
-    requestData = request
-    if (request.bfLoading) {
+    if (req.bfLoading) {
       // loadingE = ElLoading.service({
       //   lock: true,
       //   text: '数据载入中',
@@ -33,11 +29,13 @@ service.interceptors.request.use(
     /*
      *params会拼接到url上
      * */
-    if (request.isParams) {
-      request.params = request.data
-      request.data = {}
+    if (req.isParams) {
+      req.params = req.data
+      req.data = {}
     }
-    return request
+    //save req for res to using
+    reqConfig = req
+    return req
   },
   (err) => {
     Promise.reject(err)
@@ -46,51 +44,58 @@ service.interceptors.request.use(
 // 响应拦截
 service.interceptors.response.use(
   (res) => {
-    if (requestData.afHLoading && loadingE) {
+    if (reqConfig.afHLoading && loadingE) {
       loadingE.close()
     }
     // 如果是下载文件直接返回
-    if (requestData.isDownLoadFile) {
+    if (reqConfig.isDownLoadFile) {
       return res.data
     }
-    const { flag, msg, code, isNeedUpdateToken, updateToken } = res.data
+    const { msg, code, isNeedUpdateToken, updateToken } = res.data
     //更新token保持登录状态
     if (isNeedUpdateToken) {
       setToken(updateToken)
     }
-    if (flag || code === 0) {
+    const successCode = '0,200,20000'
+    if (successCode.indexOf(code) !== -1) {
       return res.data
     } else {
       //token失效或者有问题
       if (code === 403) {
-        // ElMessageBox.confirm(`${msg}`, {
-        //   confirmButtonText: '重新登录',
-        //   cancelButtonText: '取消',
-        //   type: 'warning'
-        // }).then(() => {
-        //   removeToken()
-        //   location.reload()
-        // })
-        return Promise.reject(msg)
+        if (location.href.indexOf('/login') === -1) {
+          Modal.confirm({
+            title: 'token失效,请重新登录',
+            content: '',
+            okText: '是',
+            okType: 'danger',
+            cancelText: '否',
+            onOk: () => {
+              removeToken()
+              location.reload()
+            }
+          })
+        }
+        return res.data
       }
-      if (requestData.isAlertErrorMsg) {
-        // ElMessage({
-        //   message: msg,
-        //   type: 'error',
-        //   duration: 2 * 1000
-        // })
+      if (reqConfig.isAlertErrorMsg) {
+        message.error(msg)
       }
-      return Promise.reject(msg)
+      //返回错误信息
+      //如果未catch 走unhandledrejection进行收集
+      return Promise.reject(res.data)
     }
   },
   (err) => {
     if (loadingE) loadingE.close()
-    // ElMessage({
-    //   message: err,
-    //   type: 'error',
-    //   duration: 2 * 1000
-    // })
-    return Promise.reject(err)
+    message.error(err)
+    //如果是跨域
+    //Network Error,cross origin
+    let errObj = {
+      msg: err.toString(),
+      reqUrl: reqConfig.baseURL + reqConfig.url,
+      params: reqConfig.isParams ? reqConfig.params : reqConfig.data
+    }
+    return Promise.reject(JSON.stringify(errObj))
   }
 )
 

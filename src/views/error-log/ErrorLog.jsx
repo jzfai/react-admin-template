@@ -16,7 +16,7 @@ function ErrorLog() {
   /*删除*/
   let deleteByIdReq = (id) => {
     return axiosReq({
-      url: '/ty-user/errorCollection/deleteById',
+      url: '/integration-front/errorCollection/deleteById',
       data: { id: id },
       isParams: true,
       method: 'delete',
@@ -46,6 +46,20 @@ function ErrorLog() {
       align: 'center'
     },
     {
+      title: '版本号',
+      dataIndex: 'version',
+      key: 'version',
+      width: 110,
+      align: 'center'
+    },
+    {
+      title: '浏览器类型',
+      dataIndex: 'browserType',
+      key: 'browserType',
+      width: 180,
+      align: 'center'
+    },
+    {
       title: '创建时间',
       dataIndex: 'createTime',
       key: 'createTime',
@@ -66,7 +80,6 @@ function ErrorLog() {
       )
     }
   ]
-
   /*table相关*/
   const [tableData, setTableData] = React.useState([])
   const [rowIdArr, setRowIdArr] = React.useState([])
@@ -90,7 +103,6 @@ function ErrorLog() {
     //     selectPageReq()
     //   })
   }
-
   const multiDelBtnClick = () => {
     if (rowIdArr.length === 0) {
       message.warning('表格选项不能为空').then()
@@ -98,7 +110,7 @@ function ErrorLog() {
     }
     antUtils.antConfirm(`确认删除【${rowIdArr.join(',')}】吗?`).then(() => {
       axiosReq({
-        url: `/ty-user/errorCollection/deleteBatchIds`,
+        url: `/integration-front/errorCollection/deleteBatchIds`,
         data: rowIdArr,
         method: 'DELETE',
         bfLoading: true
@@ -116,7 +128,6 @@ function ErrorLog() {
   useEffect(() => {
     selectPageReq()
   }, [pageSize, pageNum])
-
   // useEffect(() => {
   //   selectPageReq()
   // }, [pageNum])
@@ -126,7 +137,7 @@ function ErrorLog() {
       pageSize: pageSize
     })
     let reqConfig = {
-      url: '/ty-user/errorCollection/selectPage',
+      url: '/integration-front/errorCollection/selectPage',
       method: 'get',
       data,
       isParams: true,

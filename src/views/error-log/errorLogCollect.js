@@ -13,10 +13,17 @@ const checkNeed = () => {
   }
   return false
 }
-const errLogReq = (message) => {
+
+import pack from '../../../package.json'
+const errorLogReq = (errLog) => {
   request({
-    url: '/ty-user/errorCollection/insert',
-    data: { pageUrl: window.location.href, errorLog: message },
+    url: '/integration-front/errorCollection/insert',
+    data: {
+      pageUrl: window.location.href,
+      errorLog: errLog,
+      browserType: navigator.userAgent,
+      version: pack.version
+    },
     method: 'post',
     bfLoading: false,
     isAlertErrorMsg: true
@@ -24,23 +31,46 @@ const errLogReq = (message) => {
     bus.emit('reloadErrorPage')
   })
 }
+
 if (checkNeed()) {
-  window.onerror = function (msg, url, lineNo, columnNo, error) {
-    const string = msg.toLowerCase()
-    const substring = 'script error'
-    if (string.indexOf(substring) > -1) {
-      errLogReq('Script Error: See Browser Console for Detail')
-    } else if (msg.indexOf('error') !== -1) {
-      //只对error日志进行收集
-      const message = [
-        'Message: ' + msg,
-        'URL: ' + url,
-        'Line: ' + lineNo,
-        'Column: ' + columnNo,
-        'Error object: ' + JSON.stringify(error)
-      ].join(' - ')
-      errLogReq(message)
+  //JS运行时错误和资源加载错误
+  window.addEventListener(
+    'error',
+    ({ error, target }) => {
+      if (target.outerHTML) {
+        //img error collection
+        let errLog = `${JSON.stringify(target.outerHTML)}`
+        //console.log('errorString', errLog)
+        errorLogReq(errLog)
+      } else {
+        let errLog = `${error.stack.substr(0, 300)}`
+        //console.log('errorString', errLog)
+        errorLogReq(errLog)
+      }
+    },
+    //use Event capture  to collection  img error
+    true
+  )
+  //promise被reject并且错误信息没有被处理的时候，会抛出一个unhandledrejection
+  //接口错误处理，cross origin , 404,401
+  window.addEventListener('unhandledrejection', ({ reason }) => {
+    let errLog = ''
+    if (typeof reason === 'string') {
+      errLog = reason
+    } else {
+      errLog = `${reason.stack.substr(0, 300)}`
     }
-    return false
+    errorLogReq(errLog)
+    //console.log('unhandledrejection:', errLog) // 捕获后自定义处理
+  })
+
+  //些特殊情况下，还需要捕获处理console.error，捕获方式就是重写window.console.error
+  let _oldConsoleError = window.console.error
+  window.console.error = function () {
+    let errLog = Object.values(arguments).join(',')
+    if (errLog.indexOf('custom') === -1) {
+      errorLogReq(errLog)
+    }
+    _oldConsoleError && _oldConsoleError.apply(window, arguments)
   }
 }

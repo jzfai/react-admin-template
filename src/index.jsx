@@ -11,5 +11,4 @@ import 'virtual:svg-icons-register'
 
 //error log collect
 import '@/views/error-log/errorLogCollect'
-
 ReactDOM.render(<App />, document.getElementById('root'))

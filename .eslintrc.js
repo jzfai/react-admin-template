@@ -11,6 +11,8 @@ module.exports = {
     document: true,
     localStorage: true,
     window: true,
+    GLOBAL_VAR: true,
+    GLOBAL_STRING: true,
     defineProps: true,
     defineEmits: true,
     defineExpose: true,
